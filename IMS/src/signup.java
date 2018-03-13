@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import static javafx.application.Platform.exit;
 import javax.swing.JOptionPane;
 
 /*
@@ -273,6 +274,7 @@ else if(r2.isSelected())
 else if(!(r1.isSelected() || r2.isSelected()))
 {
     JOptionPane.showMessageDialog(null,"Select type");
+    exit();
 }
 try
 {
