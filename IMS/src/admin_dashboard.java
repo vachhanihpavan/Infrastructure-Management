@@ -16,6 +16,10 @@ public class admin_dashboard extends javax.swing.JPanel {
     public admin_dashboard() {
         initComponents();
     }
+    public admin_dashboard(String name) {
+        initComponents();
+        l4.setText(name);
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -34,7 +38,7 @@ public class admin_dashboard extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
+        l4 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
 
         jLabel3.setText("Booking History");
@@ -88,7 +92,7 @@ public class admin_dashboard extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jLabel4.setText("<admin>");
+        l4.setText("<admin>");
 
         jButton4.setText("Update Status");
 
@@ -102,7 +106,7 @@ public class admin_dashboard extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
+                        .addComponent(l4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
@@ -129,7 +133,7 @@ public class admin_dashboard extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel4))
+                    .addComponent(l4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
@@ -150,7 +154,7 @@ public class admin_dashboard extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.setVisible(false);
-new admin().setVisible(true);
+new admin_login().setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -163,8 +167,8 @@ new admin().setVisible(true);
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel l4;
     // End of variables declaration//GEN-END:variables
 }

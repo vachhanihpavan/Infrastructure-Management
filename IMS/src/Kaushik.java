@@ -114,7 +114,7 @@ this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_userActionPerformed
 
     private void adminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminActionPerformed
-new admin().setVisible(true);
+new admin_login().setVisible(true);
 this.setVisible(false);// TODO add your handling code here:
     }//GEN-LAST:event_adminActionPerformed
 
