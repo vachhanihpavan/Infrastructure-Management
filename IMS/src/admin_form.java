@@ -77,7 +77,7 @@ public class admin_form extends javax.swing.JFrame {
             }
         });
 
-        drop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        drop.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "CH", "CV", "CS", "EC", "EEE", "IT", "ME", "MN", "MT" }));
 
         jLabel7.setText("ID");
 
