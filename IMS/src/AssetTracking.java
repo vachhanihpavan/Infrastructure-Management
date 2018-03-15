@@ -16,6 +16,10 @@ public class AssetTracking extends javax.swing.JFrame {
     public AssetTracking() {
         initComponents();
     }
+    public AssetTracking(String id)
+    {
+        initComponents();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -77,6 +81,11 @@ public class AssetTracking extends javax.swing.JFrame {
         jButton1.setText("Edit");
 
         jButton2.setText("Exit");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -158,6 +167,10 @@ public class AssetTracking extends javax.swing.JFrame {
     private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+System.exit(0);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

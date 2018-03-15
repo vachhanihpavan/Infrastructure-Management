@@ -3,13 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import java.awt.Image;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
  *
@@ -20,12 +13,10 @@ public class Kaushik extends javax.swing.JFrame {
     /**
      * Creates new form Kaushik
      */
-    public Kaushik() throws IOException {
+    public Kaushik() {
         initComponents();
-        Image i = ImageIO.read(getClass().getResource("/images/admin-1.png"));
-        setIconImage(i);
+        
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,8 +34,9 @@ public class Kaushik extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Infrastructure Reservation System\n");
 
-        jLabel1.setFont(new java.awt.Font("Droid Serif", 3, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
         jLabel1.setText("            Infrastructure Reservation System");
 
         jButton2.setText("Exit");
@@ -91,7 +83,6 @@ public class Kaushik extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -102,7 +93,11 @@ public class Kaushik extends javax.swing.JFrame {
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 252, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 771, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -127,7 +122,7 @@ System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-new login().setVisible(true);
+new user_login().setVisible(true);
 this.setVisible(false);     // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -171,11 +166,7 @@ new suform().setVisible(true);// TODO add your handling code here:
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new Kaushik().setVisible(true);
-                } catch (IOException ex) {
-                    Logger.getLogger(Kaushik.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                new Kaushik().setVisible(true);
             }
         });
     }

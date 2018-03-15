@@ -23,9 +23,9 @@ public class newlocationform extends javax.swing.JFrame {
      * Creates new form newlocationform
      */
     public static int v=1;
-    public newlocationform() {
+    public newlocationform(String id) {
         initComponents();
-        
+        l2.setText(id);
         List avaMaxTempList =  new List();
        try{
            
@@ -52,6 +52,10 @@ int columnsNumber = rsmd.getColumnCount();
     }
     }
 
+    private newlocationform() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -68,6 +72,7 @@ int columnsNumber = rsmd.getColumnCount();
         c1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        l2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -109,16 +114,17 @@ int columnsNumber = rsmd.getColumnCount();
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(100, Short.MAX_VALUE)
+                .addContainerGap(104, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
-                        .addGap(94, 94, 94))
+                        .addGap(78, 78, 78)
+                        .addComponent(l2))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jButton2)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
-                        .addContainerGap())))
+                        .addComponent(jButton1)))
+                .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -134,7 +140,9 @@ int columnsNumber = rsmd.getColumnCount();
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(l2))
                 .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -221,7 +229,7 @@ int columnsNumber = rsmd.getColumnCount();
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 this.setVisible(false);
-new sudashboard().setVisible(true);// TODO add your handling code here:
+new sudashboard(l2.getText()).setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -266,6 +274,7 @@ new sudashboard().setVisible(true);// TODO add your handling code here:
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel l2;
     private javax.swing.JTextField t1;
     // End of variables declaration//GEN-END:variables
 }
