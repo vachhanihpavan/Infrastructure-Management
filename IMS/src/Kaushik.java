@@ -3,6 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import java.awt.Image;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 /**
  *
@@ -13,9 +20,12 @@ public class Kaushik extends javax.swing.JFrame {
     /**
      * Creates new form Kaushik
      */
-    public Kaushik() {
+    public Kaushik() throws IOException {
         initComponents();
+        Image i = ImageIO.read(getClass().getResource("/images/admin-1.png"));
+        setIconImage(i);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -161,7 +171,11 @@ new suform().setVisible(true);// TODO add your handling code here:
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Kaushik().setVisible(true);
+                try {
+                    new Kaushik().setVisible(true);
+                } catch (IOException ex) {
+                    Logger.getLogger(Kaushik.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
