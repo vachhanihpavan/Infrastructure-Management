@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -27,16 +28,27 @@ public class admindashboard extends javax.swing.JFrame {
     public admindashboard(String name) {
         initComponents();
         l4.setText(name);
+        int i,y;
         DefaultTableModel model=(DefaultTableModel)tb1.getModel();
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
             Statement stmt=con.createStatement();
-            String query = "select * from bookings;";
+            Statement stmt1= con.createStatement();
+           String query = "select * from bookings;";
             ResultSet rs= stmt.executeQuery(query);
-            if(rs.next())
+            ResultSet r=stmt1.executeQuery(query);
+            r.last();
+            int count = r.getRow();
+            ResultSetMetaData rsmd = rs.getMetaData();
+             
+                     
+             
+            while(rs.next())
             {
+               for ( i=1, y=0; i<count; i++,y++ ) 
+{
                 String a=rs.getString(1);
                 String b=rs.getString(2);
                 String c=rs.getString(3);
@@ -44,8 +56,10 @@ public class admindashboard extends javax.swing.JFrame {
                 String f=rs.getString(5);
                 boolean g=rs.getBoolean(6);
                 model.addRow(new Object[]{a,b,c,d,f,g});
-            }
+            }}
+            
         }
+        
         catch(Exception e)
                 {
                   e.printStackTrace();

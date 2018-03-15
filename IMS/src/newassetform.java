@@ -50,7 +50,7 @@ int columnsNumber = rsmd.getColumnCount();
 
        catch(Exception e)
        {
-        
+        e.printStackTrace();
     }
     }
 
