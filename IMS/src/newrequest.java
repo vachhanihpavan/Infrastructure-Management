@@ -219,7 +219,8 @@ int columnsNumber = rsmd.getColumnCount();
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(504, 335));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

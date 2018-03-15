@@ -42,12 +42,12 @@ public class admindashboard extends javax.swing.JFrame {
             r.last();
             int count = r.getRow();
             ResultSetMetaData rsmd = rs.getMetaData();
-             
+             JOptionPane.showConfirmDialog(null,count);
                      
              
             while(rs.next())
             {
-               for ( i=1, y=0; i<count; i++,y++ ) 
+               for ( i=1, y=0; i<2; i++,y++ ) 
 {
                 String a=rs.getString(1);
                 String b=rs.getString(2);
@@ -196,7 +196,8 @@ public class admindashboard extends javax.swing.JFrame {
                 .addGap(18, 18, 18))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(826, 461));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

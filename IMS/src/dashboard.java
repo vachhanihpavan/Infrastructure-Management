@@ -57,7 +57,7 @@ public class dashboard extends javax.swing.JFrame {
     }
         catch(Exception e)
         {
-            
+            e.printStackTrace();
         }
     }
 
@@ -86,6 +86,11 @@ public class dashboard extends javax.swing.JFrame {
         jLabel1.setText("Hi");
 
         jButton1.setText("LogOut");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel2.setText("User Dash Board");
@@ -200,7 +205,8 @@ public class dashboard extends javax.swing.JFrame {
                 .addGap(21, 21, 21))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(880, 500));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -217,28 +223,13 @@ new newrequest(id).setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tb1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb1MouseClicked
-        DefaultTableModel model1 = (DefaultTableModel)tb1.getModel();
-        int selectedrowindex=tb1.getSelectedRow();
-        boolean v = (boolean) model1.getValueAt(selectedrowindex,5);
-        String id1=model1.getValueAt(selectedrowindex,0).toString();
-        int id=Integer.parseInt(id1);
-        try
-        {
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection con=DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
-            Statement stmt=con.createStatement();
-            String query="Update bookings set status="+v+" where rid="+id+";";
-            int i=stmt.executeUpdate(query);
-            if(i!=0)
-            {
-                JOptionPane.showMessageDialog(null,"Updated Sucessfully");
-            }
-        }
-        catch(Exception e)
-        {
-            e.printStackTrace();
-        }// TODO add your handling code here:
+// TODO add your handling code here:
     }//GEN-LAST:event_tb1MouseClicked
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+this.setVisible(false);
+new user_login().setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

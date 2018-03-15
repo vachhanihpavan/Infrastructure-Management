@@ -34,14 +34,16 @@ public class splash extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Infrastructure Management System");
         jLabel1.setDebugGraphicsOptions(javax.swing.DebugGraphics.NONE_OPTION);
 
         l1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        l1.setForeground(new java.awt.Color(51, 255, 0));
         l1.setText("           99%");
         l1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 

@@ -113,7 +113,8 @@ public class Edit extends javax.swing.JFrame {
                         .addContainerGap())))
         );
 
-        pack();
+        setSize(new java.awt.Dimension(455, 337));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
