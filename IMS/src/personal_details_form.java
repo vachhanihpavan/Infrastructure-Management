@@ -173,7 +173,8 @@ public class personal_details_form extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        pack();
+        setSize(new java.awt.Dimension(451, 398));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void user_name_fieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_user_name_fieldActionPerformed
