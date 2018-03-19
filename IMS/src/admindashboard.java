@@ -42,7 +42,7 @@ public class admindashboard extends javax.swing.JFrame {
             r.last();
             int count = r.getRow();
             ResultSetMetaData rsmd = rs.getMetaData();
-             JOptionPane.showConfirmDialog(null,count);
+             
                      
              
             while(rs.next())
