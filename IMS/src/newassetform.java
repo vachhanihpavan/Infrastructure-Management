@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.Statement;
+import javax.swing.JOptionPane;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +18,7 @@ import java.sql.Statement;
  * @author Kaushik
  */
 public class newassetform extends javax.swing.JFrame {
+    static int x=1;
 
     /**
      * Creates new form newassetform
@@ -75,6 +77,8 @@ int columnsNumber = rsmd.getColumnCount();
         c1 = new javax.swing.JComboBox<>();
         d1 = new javax.swing.JCheckBox();
         t2 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        t3 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +101,19 @@ int columnsNumber = rsmd.getColumnCount();
         });
 
         jButton2.setText("Create");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        d1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                d1ActionPerformed(evt);
+            }
+        });
+
+        jLabel6.setText("Quantity");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -110,13 +127,15 @@ int columnsNumber = rsmd.getColumnCount();
                             .addComponent(jLabel2)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
-                            .addComponent(jLabel5))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
                         .addGap(27, 27, 27)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(d1)
                             .addComponent(t1)
                             .addComponent(c1, 0, 179, Short.MAX_VALUE)
-                            .addComponent(t2))
+                            .addComponent(t2)
+                            .addComponent(t3))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -154,7 +173,11 @@ int columnsNumber = rsmd.getColumnCount();
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(t2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
@@ -169,6 +192,62 @@ int columnsNumber = rsmd.getColumnCount();
 this.setVisible(false);
 new sudashboard(l2.getText()).setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+String name=t1.getText();
+int i;
+int q=Integer.parseInt(t3.getText());
+if(d1.isSelected()==true)
+{
+    i=1;
+}
+else
+{
+i=0;
+}
+String room=(String)c1.getSelectedItem();
+int id=x,id1=0;
+int duration=Integer.parseInt(t2.getText());
+try
+{
+    Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
+        Statement stmt = con.createStatement();
+        String query="Select id from room where name='"+room+"';";
+        ResultSet rs=stmt.executeQuery(query);
+        if(rs.next())
+        {
+             id1=Integer.parseInt(rs.getString(1));
+        }
+        id1=Integer.parseInt(rs.getString(1));
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}
+try
+{
+    Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
+        Statement stmt = con.createStatement();
+       String query="Insert into asset(id,availability,room_id,name,quantity) values("+id+","+i+","+id1+",'"+name+"',"+q+");";
+       int rs = stmt.executeUpdate(query);
+       if(rs!=0)
+       {
+           JOptionPane.showMessageDialog(null,"Assets Created");
+       }
+    
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}
+// TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void d1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_d1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_d1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,8 +294,10 @@ new sudashboard(l2.getText()).setVisible(true);// TODO add your handling code he
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel l2;
     private javax.swing.JTextField t1;
     private javax.swing.JTextField t2;
+    private javax.swing.JTextField t3;
     // End of variables declaration//GEN-END:variables
 }
