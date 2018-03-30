@@ -1,3 +1,10 @@
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,16 +20,45 @@ public class Personal extends javax.swing.JFrame {
     /**
      * Creates new form Personal
      */
-    public Personal() {
-        initComponents();
-    }
-    public Personal(String name , String id)
+       public Personal(String name , String id)
     {
         initComponents();
         t1.setText(name);
         t3.setText(id);
+        try
+        {
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
+            Statement stmt= conn.createStatement();
+            String query="Select * from user where id="+id+"";
+            ResultSet r=stmt.executeQuery(query);
+            if(r.next())
+            {
+                //t1.setText(r.getString(2));
+                t2.setText(r.getString(5));
+                //t3.setText(r.getString(4));
+                t4.setText(r.getString(4));
+                t5.setText(r.getString(6));
+                t6.setText(r.getString(10));
+                t8.setText(r.getString(7));
+                t7.setText(r.getString(11));
+                
+                      
+                
+            }
+            else
+            {
+               JOptionPane.showMessageDialog(null,"The execution was not successful");           
+            }
+            
         
     }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+       
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -125,7 +161,6 @@ public class Personal extends javax.swing.JFrame {
         t6.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         t6.setForeground(new java.awt.Color(102, 102, 102));
 
-        t7.setEditable(false);
         t7.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         t7.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -140,6 +175,11 @@ public class Personal extends javax.swing.JFrame {
         jButton3.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButton3.setForeground(new java.awt.Color(0, 51, 153));
         jButton3.setText("Update");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -172,12 +212,10 @@ public class Personal extends javax.swing.JFrame {
                             .addComponent(t5, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(t6, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(t7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(t8, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(t1, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(t1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)
                             .addComponent(t2)
-                            .addComponent(t3))))
+                            .addComponent(t3)
+                            .addComponent(t8, javax.swing.GroupLayout.Alignment.LEADING))))
                 .addGap(33, 33, 33))
         );
         layout.setVerticalGroup(
@@ -237,6 +275,22 @@ String id=t3.getText();
 new dashboard(name,id).setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+String add=t7.getText();
+String id = t3.getText();
+try
+{
+    Class.forName("com.mysql.jdbc.Driver");
+   Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
+            Statement stmt= conn.createStatement();
+            String update="Insert into user (adrs) values('"+add+"') where id="+id+"";
+}
+catch(Exception e)
+{
+    e.printStackTrace();
+}// TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -294,4 +348,8 @@ new dashboard(name,id).setVisible(true);// TODO add your handling code here:
     private javax.swing.JTextField t7;
     private javax.swing.JTextField t8;
     // End of variables declaration//GEN-END:variables
+
+    private Personal() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

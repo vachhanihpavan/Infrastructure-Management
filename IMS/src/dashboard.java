@@ -265,7 +265,8 @@ new Personal(name,id).setVisible(true);// TODO add your handling code here:
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 this.setVisible(false);
 String id = l2.getText();
-new newrequest(id).setVisible(true);// TODO add your handling code here:
+String name=jLabel4.getText();
+new newrequest(id,name).setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tb1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tb1MouseClicked
