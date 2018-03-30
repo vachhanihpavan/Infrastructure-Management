@@ -284,6 +284,15 @@ try
    Connection conn=DriverManager.getConnection("jdbc:mysql://localhost/ims","root","12345");
             Statement stmt= conn.createStatement();
             String update="Insert into user (adrs) values('"+add+"') where id="+id+"";
+            int rs=stmt.executeUpdate(update);
+            if(rs!=0)
+            {
+                JOptionPane.showMessageDialog(null,"Update Successful");
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"Error!Try Again");
+            }
 }
 catch(Exception e)
 {
