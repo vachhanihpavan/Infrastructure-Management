@@ -148,6 +148,7 @@ public class admin_login extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButton4.setForeground(new java.awt.Color(3, 64, 153));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/login_arrow.png"))); // NOI18N
         jButton4.setText("Login");
         jButton4.setBorder(null);
         jButton4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -171,6 +172,7 @@ public class admin_login extends javax.swing.JFrame {
         jButton5.setBackground(new java.awt.Color(204, 204, 204));
         jButton5.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         jButton5.setForeground(new java.awt.Color(3, 64, 153));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
         jButton5.setText("Back");
         jButton5.setBorder(null);
         jButton5.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));

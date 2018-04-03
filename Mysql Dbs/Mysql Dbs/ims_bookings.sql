@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `room`
+-- Table structure for table `bookings`
 --
 
-DROP TABLE IF EXISTS `room`;
+DROP TABLE IF EXISTS `bookings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `room` (
-  `id` int(10) NOT NULL,
-  `availabilty` int(10) DEFAULT NULL,
-  `pid` int(10) DEFAULT NULL,
-  `name` varchar(10) DEFAULT NULL,
-  `bookable` bit(1) DEFAULT NULL,
-  `cap` int(10) DEFAULT NULL
+CREATE TABLE `bookings` (
+  `rid` int(10) DEFAULT NULL,
+  `uid` int(10) DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `duration` int(10) DEFAULT NULL,
+  `noa` int(10) DEFAULT NULL,
+  `status` bit(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `room`
+-- Dumping data for table `bookings`
 --
 
-LOCK TABLES `room` WRITE;
-/*!40000 ALTER TABLE `room` DISABLE KEYS */;
-INSERT INTO `room` VALUES (1,2,100,'new','',10),(1,2,100,'new1','\0',10);
-/*!40000 ALTER TABLE `room` ENABLE KEYS */;
+LOCK TABLES `bookings` WRITE;
+/*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
+INSERT INTO `bookings` VALUES (100,120,'2016-02-02',56,2,'\0'),(1,16120,'2018-03-15',12,NULL,''),(1,16120,'2018-03-15',2,NULL,'');
+/*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 15:43:26
+-- Dump completed on 2018-04-03 18:58:00

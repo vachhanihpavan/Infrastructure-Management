@@ -16,27 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `location`
+-- Table structure for table `admin`
 --
 
-DROP TABLE IF EXISTS `location`;
+DROP TABLE IF EXISTS `admin`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `location` (
-  `ID` int(10) DEFAULT NULL,
-  `pid` int(10) DEFAULT NULL,
-  `name` varchar(10) DEFAULT NULL
+CREATE TABLE `admin` (
+  `id` int(10) NOT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `password` varchar(30) DEFAULT NULL,
+  `dob` date DEFAULT NULL,
+  `dept` varchar(30) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `location`
+-- Dumping data for table `admin`
 --
 
-LOCK TABLES `location` WRITE;
-/*!40000 ALTER TABLE `location` DISABLE KEYS */;
-INSERT INTO `location` VALUES (100,100,'Main');
-/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+LOCK TABLES `admin` WRITE;
+/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
+INSERT INTO `admin` VALUES (123,'Kaushik','12345','1264-08-09','Item 1'),(123,'Kaushik','12345','1999-06-01','CH');
+/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 15:43:26
+-- Dump completed on 2018-04-03 18:58:00

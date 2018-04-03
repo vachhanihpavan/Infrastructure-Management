@@ -155,6 +155,7 @@ public class admin_form extends javax.swing.JFrame {
 
         signup.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         signup.setForeground(new java.awt.Color(3, 64, 153));
+        signup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sign_up.png"))); // NOI18N
         signup.setText("Sign Up");
         signup.setBorder(null);
         signup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -166,6 +167,7 @@ public class admin_form extends javax.swing.JFrame {
 
         back.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         back.setForeground(new java.awt.Color(3, 64, 153));
+        back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/back.png"))); // NOI18N
         back.setText("Back");
         back.setBorder(null);
         back.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -186,29 +188,31 @@ public class admin_form extends javax.swing.JFrame {
                         .addGap(50, 50, 50)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel3)
+                                    .addComponent(name)
+                                    .addComponent(dob)
+                                    .addComponent(id)
+                                    .addComponent(jLabel4)
+                                    .addComponent(drop, 0, 269, Short.MAX_VALUE)
+                                    .addComponent(pass)
+                                    .addComponent(confirm))
+                                .addContainerGap(40, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel2)
-                                .addComponent(jLabel5)
-                                .addComponent(jLabel7)
-                                .addComponent(jLabel3)
-                                .addComponent(name)
-                                .addComponent(dob)
-                                .addComponent(id)
-                                .addComponent(jLabel4)
-                                .addComponent(drop, 0, 269, Short.MAX_VALUE)
-                                .addComponent(pass)
-                                .addComponent(confirm)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(24, 24, 24))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(135, 135, 135)
                         .addComponent(jLabel10)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
-                        .addComponent(l2)))
-                .addContainerGap())
+                        .addComponent(l2)
+                        .addContainerGap())))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -242,10 +246,10 @@ public class admin_form extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(confirm, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(signup, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(back, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(back, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                    .addComponent(signup, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 

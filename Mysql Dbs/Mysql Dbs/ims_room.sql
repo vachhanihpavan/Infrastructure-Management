@@ -16,29 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `admin`
+-- Table structure for table `room`
 --
 
-DROP TABLE IF EXISTS `admin`;
+DROP TABLE IF EXISTS `room`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `admin` (
+CREATE TABLE `room` (
   `id` int(10) NOT NULL,
-  `name` varchar(30) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `dept` varchar(30) DEFAULT NULL
+  `availabilty` int(10) DEFAULT NULL,
+  `pid` int(10) DEFAULT NULL,
+  `name` varchar(10) DEFAULT NULL,
+  `bookable` bit(1) DEFAULT NULL,
+  `cap` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `admin`
+-- Dumping data for table `room`
 --
 
-LOCK TABLES `admin` WRITE;
-/*!40000 ALTER TABLE `admin` DISABLE KEYS */;
-INSERT INTO `admin` VALUES (123,'Kaushik','12345','1264-08-09','Item 1');
-/*!40000 ALTER TABLE `admin` ENABLE KEYS */;
+LOCK TABLES `room` WRITE;
+/*!40000 ALTER TABLE `room` DISABLE KEYS */;
+INSERT INTO `room` VALUES (1,2,100,'new','',10),(1,2,100,'new1','\0',10);
+/*!40000 ALTER TABLE `room` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 15:43:26
+-- Dump completed on 2018-04-03 18:58:00

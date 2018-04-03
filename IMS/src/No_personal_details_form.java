@@ -15,12 +15,12 @@ import javax.swing.JOptionPane;
  *
  * @author Kaushik
  */
-public class personal_details_form extends javax.swing.JFrame {
+public class No_personal_details_form extends javax.swing.JFrame {
 
     /**
      * Creates new form Personal
      */
-    public personal_details_form(String name , String id) {
+    public No_personal_details_form(String name , String id) {
         initComponents();
         try
         {
@@ -54,7 +54,7 @@ public class personal_details_form extends javax.swing.JFrame {
         
     }
 
-    private personal_details_form() {
+    private No_personal_details_form() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -251,21 +251,23 @@ public class personal_details_form extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(No_personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(No_personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(No_personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(No_personal_details_form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new personal_details_form().setVisible(true);
+                new No_personal_details_form().setVisible(true);
             }
         });
     }

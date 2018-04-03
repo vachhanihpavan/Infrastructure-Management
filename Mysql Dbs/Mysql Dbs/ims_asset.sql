@@ -16,30 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `bookings`
+-- Table structure for table `asset`
 --
 
-DROP TABLE IF EXISTS `bookings`;
+DROP TABLE IF EXISTS `asset`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `bookings` (
-  `rid` int(10) DEFAULT NULL,
-  `uid` int(10) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `duration` int(10) DEFAULT NULL,
-  `noa` int(10) DEFAULT NULL,
-  `status` bit(1) DEFAULT NULL
+CREATE TABLE `asset` (
+  `id` int(10) NOT NULL,
+  `availability` bit(1) DEFAULT NULL,
+  `quantity` int(10) DEFAULT NULL,
+  `room_id` int(10) DEFAULT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `duration` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `bookings`
+-- Dumping data for table `asset`
 --
 
-LOCK TABLES `bookings` WRITE;
-/*!40000 ALTER TABLE `bookings` DISABLE KEYS */;
-INSERT INTO `bookings` VALUES (100,120,'2016-02-02',56,2,'\0');
-/*!40000 ALTER TABLE `bookings` ENABLE KEYS */;
+LOCK TABLES `asset` WRITE;
+/*!40000 ALTER TABLE `asset` DISABLE KEYS */;
+INSERT INTO `asset` VALUES (1,'',5,1,'pro',NULL),(1,'',2,1,'new1',NULL);
+/*!40000 ALTER TABLE `asset` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-15 15:43:25
+-- Dump completed on 2018-04-03 18:58:00
